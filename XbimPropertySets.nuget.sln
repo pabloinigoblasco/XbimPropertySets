@@ -1,16 +1,16 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xbim.Properties", "Xbim.Properties\Xbim.Properties.csproj", "{651CBC27-A553-4DF1-8D23-BE6D6DAA90EC}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{F6FBB625-BB47-4576-8F0C-F473E58CF395}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xbim.Properties", "Xbim.Properties\Xbim.Properties.csproj", "{651CBC27-A553-4DF1-8D23-BE6D6DAA90EC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nuget", "nuget", "{1ABA36BF-053A-4738-B041-2B9F09F66674}"
 	ProjectSection(SolutionItems) = preProject
 		Xbim.PropertySets.nuspec = Xbim.PropertySets.nuspec
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{A78CDAF3-5E4D-48C4-ACE9-B69F263D0E22}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,12 +22,15 @@ Global
 		{651CBC27-A553-4DF1-8D23-BE6D6DAA90EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{651CBC27-A553-4DF1-8D23-BE6D6DAA90EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{651CBC27-A553-4DF1-8D23-BE6D6DAA90EC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F6FBB625-BB47-4576-8F0C-F473E58CF395}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F6FBB625-BB47-4576-8F0C-F473E58CF395}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F6FBB625-BB47-4576-8F0C-F473E58CF395}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F6FBB625-BB47-4576-8F0C-F473E58CF395}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A78CDAF3-5E4D-48C4-ACE9-B69F263D0E22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A78CDAF3-5E4D-48C4-ACE9-B69F263D0E22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A78CDAF3-5E4D-48C4-ACE9-B69F263D0E22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A78CDAF3-5E4D-48C4-ACE9-B69F263D0E22}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6C7AB11F-12CB-47F8-8379-BB5D26544538}
 	EndGlobalSection
 EndGlobal

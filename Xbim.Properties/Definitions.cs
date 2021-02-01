@@ -8,6 +8,7 @@ using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
+using XbimPropertySets.Definitions;
 
 namespace Xbim.Properties
 {
@@ -184,17 +185,22 @@ namespace Xbim.Properties
             {
                 if (typeof (T) == typeof (QtoSetDef))
                     throw new Exception("No quantity sets are defined for IFC 2x3 in definition files.");
-                mgr = Definitions.IFC2x3_Defitinion_files.ResourceManager;
+                
+                mgr =IFC2x3_Defitinion_files.ResourceManager;
             }
             if (_version == Version.IFC4)
             {
-                mgr = typeof (T) == typeof (QtoSetDef)
-                    ? Definitions.IFC4_QTO_Definition_files.ResourceManager
-                    : Definitions.IFC4_Definition_files.ResourceManager;
+                
+                   mgr = typeof (T) == typeof (QtoSetDef)
+                    ? IFC4_QTO_Definition_files.ResourceManager
+                    : IFC4_Definition_files.ResourceManager;
             }
 
             if (mgr == null)
                 throw new Exception("No default content defined for this combination of version and property type");
+
+            var assembly = typeof(T).Assembly;
+            var resourceName = assembly.GetManifestResourceNames();
 
             var resources = mgr.GetResourceSet(CultureInfo.InvariantCulture, true, true);
             foreach (var value in from DictionaryEntry entry in resources select entry.Value as string)
@@ -210,7 +216,7 @@ namespace Xbim.Properties
             if (_version != Version.IFC4)
                 throw new Exception("IFC4 COBie properties can only be loaded if this set is defined to be IFC4.");
             var resources =
-                Definitions.IFC4_COBie_Definition_files.ResourceManager.GetResourceSet(CultureInfo.InvariantCulture,
+                IFC4_COBie_Definition_files.ResourceManager.GetResourceSet(CultureInfo.InvariantCulture,
                     true, true);
             foreach (var value in from DictionaryEntry entry in resources select entry.Value as string)
             {
@@ -225,7 +231,7 @@ namespace Xbim.Properties
             if (_version != Version.IFC4)
                 throw new Exception("IFC4 COBie properties can only be loaded if this set is defined to be IFC4.");
             var resources =
-                Definitions.IFC4_and_COBie_Definition_files.ResourceManager.GetResourceSet(CultureInfo.InvariantCulture,
+                IFC4_and_COBie_Definition_files.ResourceManager.GetResourceSet(CultureInfo.InvariantCulture,
                     true, true);
             foreach (var value in from DictionaryEntry entry in resources select entry.Value as string)
             {
